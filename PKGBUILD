@@ -34,6 +34,10 @@ _musa_toolkits_quyuan_tar_name=MUSA_Toolkits_rc2.0.0/musa_toolkits_rc2.0.0-quyua
 _musa_toolkits_component_strip=1
 _musa_toolkits_prefix=musa_toolkits_2.0.0
 
+if [ -n "${_mtgpu_rpm_name}" ]; then
+    makedepends+=('rpmextract')
+fi
+
 source=(
     # download it
     # # https://www.mthreads.com/pes/drivers/driver-info?productType=DESKTOP&productModel=DESKTOP_MTT_S80&osVersion=MTT_S80_Ubuntu
@@ -59,10 +63,15 @@ prepare()
     # NOTE: at 2.6.0 they are the same
     mkdir mtgpu
     pushd mtgpu
-    ar x "../${_mtgpu_deb_name}"
-    rm control.tar.gz debian-binary
-    tar -xf data.tar.gz
-    rm data.tar.gz
+    
+    if [ -n "${_mtgpu_rpm_name}" ]; then
+        rpmextract.sh "../${_mtgpu_rpm_name}"
+    else        
+        ar x "../${_mtgpu_deb_name}"
+        rm control.tar.gz debian-binary
+        tar -xf data.tar.gz
+        rm data.tar.gz
+    fi
 
     mv usr/src/mtgpu-1.0.0 "usr/src/mtgpu-${pkgver}"
     pushd "usr/src/mtgpu-${pkgver}"
