@@ -7,8 +7,8 @@ pkgname=(
     musa-userspace-quyuan
 )
 
-pkgver=2.6.0
-pkgrel=2
+pkgver=2.7.0
+pkgrel=1
 
 pkgdesc='MooreThreads MUSA'
 arch=('x86_64')
@@ -20,49 +20,41 @@ makedepends=(
     'binutils'
 )
 
-_mtgpu_deb_name=MT_Linux_Driver_2.6.0/musa_2.6.0-Ubuntu-dev-quyuan_amd64.deb
-_mudnn_chunxiao_tar_name=muDNN_rc2.4.0/mudnn_rc2.4.0-chunxiao.tar.gz
-_mudnn_quyuan_tar_name=muDNN_rc2.4.0/mudnn_rc2.4.0-qy2.tar.gz # shitty naming
+_mtgpu_deb_name=MT_Linux_Driver_2.7.0/musa_2.7.0-rc1_Ubuntu_amd64.deb
+_mudnn_chunxiao_tar_name=muDNN_rc2.5.0/mudnn_rc2.5.0-chunxiao.tar.gz
+_mudnn_quyuan_tar_name=muDNN_rc2.5.0/mudnn_rc2.5.0-quyuan.tar.gz
 _mudnn_component_strip=2
 _mudnn_prefix=./mudnn
 _mccl_chunxiao_tar_name=MCCL_rc1.4.0/mccl_rc1.4.0-chunxiao.tar.gz
 _mccl_quyuan_tar_name=MCCL_rc1.4.0/mccl_rc1.4.0-quyuan.tar.gz
 _mccl_component_strip=2
 _mccl_prefix=./mccl
-_musa_toolkits_chunxiao_tar_name=MUSA_Toolkits_rc2.0.0/musa_toolkits_rc2.0.0-chunxiao.tar.gz
-_musa_toolkits_quyuan_tar_name=MUSA_Toolkits_rc2.0.0/musa_toolkits_rc2.0.0-quyuan.tar.gz
+_musa_toolkits_chunxiao_tar_name=MUSA_Toolkits_rc2.1.0/musa_toolkits_rc2.1.0-chunxiao.tar.gz
+_musa_toolkits_quyuan_tar_name=MUSA_Toolkits_rc2.1.0/musa_toolkits_rc2.1.0-quyuan.tar.gz
 _musa_toolkits_component_strip=1
 _musa_toolkits_prefix=musa_toolkits_2.0.0
 
 source=(
     # download it
-    # # https://www.mthreads.com/pes/drivers/driver-info?productType=DESKTOP&productModel=DESKTOP_MTT_S80&osVersion=MTT_S80_Ubuntu
-    # "musa_${pkgver}-Ubuntu_amd64.deb"::"invalid://musa_${pkgver}-Ubuntu_amd64.deb"
     # https://developer.mthreads.com/sdk/download/musa?equipment=&os=&driverVersion=&version=
-    "MUSA+SDK-rc2.0.0+Intel+CPU_Ubuntu.zip::https://developer.mthreads.com/sdk/download/musa?equipment=&os=&driverVersion=&version="
-    "00-port-ti-img-rouge-newer-sources-${pkgver}-${pkgrel}.diff::https://github.com/dixyes/mtgpu-drv/commit/4bae8c0555c09ac55d417f184788824a77b014b3.diff"
-    "01-disable-cursor_set-things-${pkgver}-${pkgrel}.diff::https://github.com/dixyes/mtgpu-drv/commit/995bbbac20757ca22232448d1f29c5a2e9b67c04.diff"
+    "MUSA+SDK-rc2.1.0_Intel_CPU_Ubuntu_chunxiao.zip::https://developer.mthreads.com/sdk/download/musa?equipment=&os=&driverVersion=&version="
+    "MUSA+SDK-rc2.1.0_Intel_CPU_Ubuntu_quyuan.zip::https://developer.mthreads.com/sdk/download/musa?equipment=&os=&driverVersion=&version="
     "02-fake-ubuntu-${pkgver}-${pkgrel}.diff::https://github.com/dixyes/mtgpu-drv/commit/81e52ddbbcc587a800724d25584d8060a1228429.diff"
-    "03-fix-ipc_tty_write-${pkgver}-${pkgrel}.diff::https://github.com/dixyes/mtgpu-drv/commit/d85a187f4e9d2a031bebdabf4fecb841aa6b4851.diff"
-    "04-workaround-pci_enable_pcie_error_reporting-${pkgver}-${pkgrel}.diff::https://github.com/dixyes/mtgpu-drv/commit/0b797a3e4b4f4ed36d6f0b7915cb764b7d6d0ba7.diff"
 )
-sha512sums=('a06fe0c6d49d0569072bb2ebc40d68d5cf6f00a8fcafd72b25619469276e740f5a0bcd4cf742751ec6e2698310cd9c9041593039fb5e2509641e68be13dada07'
-            '6b8cea6c6c26c9ee83c095ff362d484401dfa2d745bfa603bc3ac2a9dcec5de31139c72de4f70ec9680ecfed695a196bbe33e6141dcd7a60a8aa05c6e2638200'
-            'd9ade66f27c9afe43343191ed671a18740a2543dab95c12f11187f3bff57ded4b0a8ef56f383413e0ba98447c851f07f591a3a128cc21df4780c699107447427'
-            '06b60c59c664234959f2f9c4cbc30e871bdc405a396cb2094222a66e302dbdc272c8ee3ebdc659c66428224fe1c6c5d29baa76bd66273328e3c5b77fce1a1eef'
-            '6964b0960aafdec107b7c2a919a31b8e738605c71ffe2813f7614128958a18207308f4326d5ba5e5d4e235d313862377f5e5ffcc45cdc9cf390c69658b3cab85'
-            '7137d91dea6e8ffdee392ecd7124bdb7ba0491b68ceda0c8663562f552d029403a2f9b849cac060a45748cc8d298ba1f7a2b7f2950b8f785348edb59754b6965')
+sha256sums=('de4a8c9a7aae6e70a814ec7b0c1419e78fd5a73d0ffdc0d0790b15f3c8d5dcc7'
+            'e1a66aed4c30337757ef85d8c8067149027adb0678b11eccc69b3e993b74923e'
+            '37ae2287018d52a8bdd6909ccfbee005a049ab90f8c8b4d8159473867be950d2')
 
 prepare()
 {
     # dkms sources and x things
-    # NOTE: at 2.6.0 they are the same
+    # NOTE: at 2.7.0 they are the same
     mkdir mtgpu
     pushd mtgpu
     ar x "../${_mtgpu_deb_name}"
-    rm control.tar.gz debian-binary
-    tar -xf data.tar.gz
-    rm data.tar.gz
+    rm control.tar.xz debian-binary
+    tar -xf data.tar.xz
+    rm data.tar.xz
 
     mv usr/src/mtgpu-1.0.0 "usr/src/mtgpu-${pkgver}"
     pushd "usr/src/mtgpu-${pkgver}"
