@@ -7,8 +7,8 @@ pkgname=(
     musa-userspace-quyuan
 )
 
-pkgver=3.0.1
-_mtgpu_version=2.7.0-20240717
+pkgver=3.1.0
+_mtgpu_version=2.7.0-20240822
 pkgrel=1
 
 pkgdesc='MooreThreads MUSA'
@@ -21,46 +21,46 @@ makedepends=(
     'binutils'
 )
 
-_mtgpu_deb_name=MT_Linux_Driver_2.7.0/musa_2.7.0_rc0717_Ubuntu_amd64.deb
-_mudnn_chunxiao_tar_name=muDNN_rc2.6.1/mudnn_rc2.6.1.tar.gz 
-_mudnn_quyuan_tar_name=muDNN_rc2.6.1/mudnn_rc2.6.1.tar.gz 
+_mtgpu_deb_name=MUSA+SDK-MUSA+SDK+rc3.1.0+/MT_Linux_Driver_2.7.0/musa_2.7.0-rc3-0822_Ubuntu_amd64.deb
+_mudnn_chunxiao_tar_name=MUSA+SDK-MUSA+SDK+rc3.1.0+/muDNN_rc2.7.0/mudnn_rc2.7.0.tar.gz
+_mudnn_quyuan_tar_name=MUSA+SDK-MUSA+SDK+rc3.1.0+/muDNN_rc2.7.0/mudnn_rc2.7.0.tar.gz
 _mudnn_component_strip=2
 _mudnn_prefix=./mudnn
-_mccl_chunxiao_tar_name=MCCL_rc1.6.1/mccl_rc1.6.1.tar.gz
-_mccl_quyuan_tar_name=MCCL_rc1.6.1/mccl_rc1.6.1.tar.gz
+_mccl_chunxiao_tar_name=MUSA+SDK-MUSA+SDK+rc3.1.0+/MCCL_rc1.7.0/mccl_rc1.7.0.tar.gz
+_mccl_quyuan_tar_name=MUSA+SDK-MUSA+SDK+rc3.1.0+/MCCL_rc1.7.0/mccl_rc1.7.0.tar.gz
 _mccl_component_strip=2
 _mccl_prefix=./mccl
-_musa_toolkits_chunxiao_tar_name=MUSA_Toolkits_rc3.0.1/musa_toolkits_rc3.0.1.tar.gz
-_musa_toolkits_quyuan_tar_name=MUSA_Toolkits_rc3.0.1/musa_toolkits_rc3.0.1.tar.gz
+_musa_toolkits_chunxiao_tar_name=MUSA+SDK-MUSA+SDK+rc3.1.0+/MUSA_Toolkits_rc3.1.0/musa_toolkits_rc3.1.0.tar.gz
+_musa_toolkits_quyuan_tar_name=MUSA+SDK-MUSA+SDK+rc3.1.0+/MUSA_Toolkits_rc3.1.0/musa_toolkits_rc3.1.0.tar.gz
 _musa_toolkits_component_strip=1
-_musa_toolkits_prefix=musa_toolkits_3.0.1
+_musa_toolkits_prefix=musa_toolkits_3.1.0
 
 source=(
     # download it
     # https://developer.mthreads.com/sdk/download/musa?equipment=&os=&driverVersion=&version=
-    "MUSA+SDK-MUSA+SDK+rc3.0.1.zip::https://developer.mthreads.com/sdk/download/musa?equipment=&os=&driverVersion=&version="
-    "00-Define-PCI_IRQ_LEGACY-if-not-exist.diff::https://github.com/dixyes/mtgpu-drv/commit/b2e9b27c563b424f66c619ea0f8593fa4a21e395.diff"
-    "01-Use-fd_file-macro-if-exist.diff::https://github.com/dixyes/mtgpu-drv/commit/f6cc85171ee4dd0f04d6efca90d6e90f563012b9.diff"
-    "02-Remove-the-second-arg-of-__assign_str.diff::https://github.com/dixyes/mtgpu-drv/commit/3d588b1fad860499486b3e8a7a18138e860eb032.diff"
-    "03-Add-missing-headers.diff::https://github.com/dixyes/mtgpu-drv/commit/3a868f7a8c2ccb158dcc109c15f9a4ef9b75a7ce.diff"
-    "04-Adopt-struct-platform_device-changes.diff::https://github.com/dixyes/mtgpu-drv/commit/f8da479013ee89bd4269150550482fb5c9630762.diff"
-    "05-Fake-as-ubuntu.diff::https://github.com/dixyes/mtgpu-drv/commit/bbbffd4d935f07a217798f2db9f4153fedd73610.diff"
-    "06-Add-missing-include.diff::https://github.com/dixyes/mtgpu-drv/commit/e9f91bbf42fb26c1715743f124f465bb7fc373bf.diff"
-    "07-Fix-missing-include.diff::https://github.com/dixyes/mtgpu-drv/commit/9d721e42ee11449132b87ef38df07ab62babb360.diff"
-    "08-Add-FOP_UNSIGNED_OFFSET-flag.diff::https://github.com/dixyes/mtgpu-drv/commit/98b1c323f939dc70f5923511587521f8cc0cfb7d.diff"
-    "09-Add-lock-for-find_vma.diff::https://github.com/dixyes/mtgpu-drv/commit/03fc1a0fc1af50f51ec009d6106eaf7e2073e80e.diff"
+    "MUSA+SDK-MUSA+SDK+rc3.1.0+.zip::https://developer.mthreads.com/sdk/download/musa?equipment=&os=&driverVersion=&version="
+    "00-Define-PCI_IRQ_LEGACY-if-not-exist.diff::https://github.com/dixyes/mtgpu-drv/commit/e458c31bd34db2c77b2b7a640c5b94eba1e57a7b.diff"
+    "01-Use-fd_file-macro-if-exist.diff::https://github.com/dixyes/mtgpu-drv/commit/3252eaf2ce0ff656f9c0aa4f8c0d6c571a7cdfb0.diff"
+    "02-Remove-the-second-arg-of-__assign_str.diff::https://github.com/dixyes/mtgpu-drv/commit/05e414ed5c397475514b67e619e932925b86557b.diff"
+    "03-Add-missing-headers.diff::https://github.com/dixyes/mtgpu-drv/commit/6d5f0bb14d6656ecd9a7f60b1b936b3e859a508a.diff"
+    "04-Adopt-struct-platform_device-changes.diff::https://github.com/dixyes/mtgpu-drv/commit/a99fee95cc65423ebecb9f40a82673a1d55608a8.diff"
+    "05-Fake-as-ubuntu.diff::https://github.com/dixyes/mtgpu-drv/commit/793e50f595629c17bba38111347a4b69b6343620.diff"
+    "06-Add-missing-include.diff::https://github.com/dixyes/mtgpu-drv/commit/52c5f5ee3ac3a8c16a42f3ef100186004ecfe1a2.diff"
+    "07-Fix-missing-include.diff::https://github.com/dixyes/mtgpu-drv/commit/d098e1d6fcb7bff90c6ecb5ba7678872d9e12ef0.diff"
+    "08-Add-FOP_UNSIGNED_OFFSET-flag.diff::https://github.com/dixyes/mtgpu-drv/commit/d865717c047dca5673a905ccd1987d75b304d88d.diff"
+    "09-Add-lock-for-find_vma.diff::https://github.com/dixyes/mtgpu-drv/commit/4a83f8b52126a11123c3fe420e60c475081c9b3f.diff"
 )
-sha256sums=('b6880b553cb7941fa4114cb8b9cf83b05cc3cd7e955956b9499522da67b2927a'
-            '161d7eb17d48ee7ea52f7d85d51779088a2b7196489ef5f1d9f06f7a9543372f'
-            '1431575cc67bd30d5b6dcc134954cb8f326203f80f4041362fcee5f1fd609275'
+sha256sums=('3a4713236ff98e065dcc9de296828951516ee523efa552bc3d8d25f20663aa7a'
+            '5ab28919c8743724aa0c86b5c4fc53b30ccc143f2da2d1f548e51b6e8c8edd2e'
+            '3f8a7900006af9806618b80c6c8c995836b6c2553dd3f028d3bcd101bee720f1'
             '9caf0cd1059baa1b4647cf8463bada164e0d4496b2fc980fd8dbee37a00875ca'
-            '9f4ef75f7d42be51a5e99b18d446a7c420f137972f01ec43223ac1da6d9c6904'
-            '25e746bfa023d3d859c04c01b34c976213541e4de2bf34f32a8ad9f9ca20c215'
-            '010aa14a0aa7bf3cb187702dda069904f7339d8ce25ac90c2d9f35a439f54981'
-            '2a19e845ea881698e4265da12d79e0fa040bc56cee798f1af4341af3464f97f9'
+            '3c499ab6c3c7bf3eb760bbb91ff9542b284efbbdcc106a3a067465b47ee667ab'
+            '7ffee73da577c63fbe6c07ed8866f68aad59312b43046f5de80715bc981ceba9'
+            '0123f0f2593ee49ca8e1e34fddb57ee64e898b92fb343e9db260f924db6a63dc'
+            '94abaf20ecc03472b69d0a95c18f60cc750af8f84b3ce29ed72fedc6275e6949'
             'af8f7bc0010d957f6ea2d0f5de7f0d6ca605878c74246644482b2a71c00e798c'
-            '57df5a3422a9d06d603277447b800a22dd8d02bda170bb87fd70cf394bc21b4d'
-            '32ee7687ada951838d18f3401866903d5eb6cdaaeb39f13d53f3fc2a72b421b8')
+            'bf01a728aa44f7df7116315be98908183a598cbb3715cd810b2806704e63812e'
+            '46d2475f97072b9f709fe0b1b3cf9fc4b1a8dcfbe58ca5814b25ab80fd916110')
 
 prepare()
 {
@@ -73,8 +73,10 @@ prepare()
     tar -xf data.tar.*
     rm data.tar.*
 
-    mv usr/src/mtgpu-1.0.0 "usr/src/mtgpu-${pkgver}"
-    pushd "usr/src/mtgpu-${pkgver}"
+    if [ -d "usr/src/mtgpu-1.0.0" ]; then
+        mv "usr/src/mtgpu-1.0.0" "usr/src/mtgpu-${_mtgpu_version%%-*}"
+    fi
+    pushd "usr/src/mtgpu-${_mtgpu_version%%-*}"
     
     for patch in "${srcdir}"/*.diff; do
         patch -p1 < "${patch}"
@@ -88,7 +90,7 @@ PACKAGE_NAME=mtgpu
 PACKAGE_VERSION=${_mtgpu_version}
 AUTOINSTALL="yes"
 EOF
-    popd # "usr/src/mtgpu-${pkgver}"
+    popd # "usr/src/mtgpu-${_mtgpu_version%%-*}"
     popd # mtgpu
 
     # install packages
@@ -149,8 +151,8 @@ package_mtgpu-dkms()
     cp -r --no-preserve='ownership' lib "${pkgdir}/usr/"
 
     # dkms sources
-    install -d -m0755 "${pkgdir}/usr/src/mtgpu-${pkgver}"
-    cp -dr --no-preserve='ownership' usr/src/mtgpu-${pkgver} "${pkgdir}/usr/src"
+    install -d -m0755 "${pkgdir}/usr/src/mtgpu-${_mtgpu_version%%-*}"
+    cp -dr --no-preserve='ownership' usr/src/mtgpu-${_mtgpu_version%%-*} "${pkgdir}/usr/src"
 
     popd # mtgpu
 }
