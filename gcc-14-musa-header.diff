@@ -1,0 +1,24 @@
+--- a/lib/clang/14.0.0/include/__clang_musa_runtime_wrapper.h	2025-04-22 23:06:12.000000000 +0800
++++ b/lib/clang/14.0.0/include/__clang_musa_runtime_wrapper.h	2025-04-22 23:43:36.879038959 +0800
+@@ -49,12 +49,21 @@
+ 
+ // Include some standard headers to avoid CUDA headers including them
+ // while some required macros (like __THROW) are in a weird state.
++
++// for gcc 14
++#define _BITS_FLOATN_H
++#pragma push_macro("__FLOAT128__")
++#pragma push_macro("__SIZEOF_FLOAT128__")
++#undef __FLOAT128__
++#undef __SIZEOF_FLOAT128__
+ #include <cmath>
+ #include <cstdlib>
+ #include <stdlib.h>
+ #include <string.h>
+ #undef __MUSACC__
+ #undef __CUDACC__
++#pragma pop_macro("__FLOAT128__")
++#pragma pop_macro("__SIZEOF_FLOAT128__")
+ 
+ // Preserve common macros that will be changed below by us or by CUDA
+ // headers.
