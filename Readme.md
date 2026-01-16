@@ -1,5 +1,9 @@
 # MooreThreads MUSA archlinux PKGBUILD
 
+## Unmaintained
+
+Due to the new loginwall it applies, I won't keep maintaining this. Maybe arch user donot need a Moore Threads GPU.
+
 ## Usage
 
 1. download source/objects from mthreads: https://developer.mthreads.com/sdk/download/musa?equipment=&os=&driverVersion=&version=
